@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+			  targetNamespace="http://www.ksh3236.com/TimeTable"
+			  xmlns:target="http://www.ksh3236.com/TimeTable"
+			  elementFormDefault="qualified">
+	<group name="TimeGroup">
+		<sequence>
+			<element name='강의이름' type="string"/>
+			<element name="담당교수" type="string"/>
+			<element name="수업교실" type="string"/>
+		</sequence>
+	</group>
+	<element name="TimeTable">
+		<complexType>
+			<sequence>
+				<element name="Time" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="시간" type="string"/>
+							<element name="월">
+								<complexType>
+									<group ref="target:TimeGroup"/>
+								</complexType>
+							</element>
+							<element name="화">
+								<complexType>
+									<group ref="target:TimeGroup"/>
+								</complexType>
+							</element>
+							<element name="수">
+								<complexType>
+									<group ref="target:TimeGroup"/>
+								</complexType>
+							</element>
+							<element name="목">
+								<complexType>
+									<group ref="target:TimeGroup"/>
+								</complexType>
+							</element>
+							<element name="금">
+								<complexType>
+									<group ref="target:TimeGroup"/>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
